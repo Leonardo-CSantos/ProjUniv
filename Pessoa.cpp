@@ -2,37 +2,38 @@
 
 typedef struct Pessoa
 {
-    int dia;
-    int mes;
-    int ano;
+    int diaP;
+    int mesP;
+    int anoP;
     int idade;
-}Pessoa;
 
-void calculaIdade (Pessoa *p, int diaAt, int mesAt, int anoAt)
-{
-    p->idade = anoAt - p->ano;
-    if (mesAt < p->mes)
-        p->idade--;
-    else if (mesAt == p->mes && diaAt < p->dia)
-        p->idade--;
-}
+    void calculaIdade (int diaAt, int mesAt, int anoAt)
+    {
+        idade = anoAt - anoP;
+        if (mesAt < mesP)
+            idade--;
+        else if (mesAt == mesP && diaAt < diaP)
+            idade--;
+    }
+
+}Pessoa;
 
 int main ()
 {
     Pessoa Einstein, Newton;
 
-    Einstein.dia = 14;
-    Einstein.mes = 3;
-    Einstein.ano = 1879;
+    Einstein.diaP = 14;
+    Einstein.mesP = 3;
+    Einstein.anoP = 1879;
     Einstein.idade = -1;    
 
-    Newton.dia = 4;
-    Newton.mes = 1;
-    Newton.ano = 1643;
+    Newton.diaP = 4;
+    Newton.mesP = 1;
+    Newton.anoP = 1643;
     Newton.idade = -1;
 
-    calculaIdade(&Einstein, 13, 7, 2024);
-    calculaIdade(&Newton, 13, 7, 2024);
+    Einstein.calculaIdade(13, 7, 2024);
+    Newton.calculaIdade(13, 7, 2024);
 
     printf ("A idade de Einstein seria: %d anos\n", Einstein.idade);
     printf ("A idade de Newton seria: %d anos\n", Newton.idade);
