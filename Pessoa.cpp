@@ -7,6 +7,14 @@ typedef struct Pessoa
     int anoP;
     int idade;
 
+    Pessoa (int diaNa, int mesNa, int anoNa)
+    {
+        diaP = diaNa;
+        mesP = mesNa;
+        anoP = anoNa;
+        idade = -1;
+    }
+
     void calculaIdade (int diaAt, int mesAt, int anoAt)
     {
         idade = anoAt - anoP;
@@ -20,17 +28,8 @@ typedef struct Pessoa
 
 int main ()
 {
-    Pessoa Einstein, Newton;
-
-    Einstein.diaP = 14;
-    Einstein.mesP = 3;
-    Einstein.anoP = 1879;
-    Einstein.idade = -1;    
-
-    Newton.diaP = 4;
-    Newton.mesP = 1;
-    Newton.anoP = 1643;
-    Newton.idade = -1;
+    Pessoa Einstein (14, 3, 1879);
+    Pessoa Newton (4, 1, 1643);
 
     Einstein.calculaIdade(13, 7, 2024);
     Newton.calculaIdade(13, 7, 2024);
