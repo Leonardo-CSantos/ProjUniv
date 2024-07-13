@@ -1,40 +1,28 @@
-#include <stdio.h>
+#include "Pessoa.h"
 
-typedef struct Pessoa
+Pessoa::Pessoa (int diaNa, int mesNa, int anoNa)
 {
-    int diaP;
-    int mesP;
-    int anoP;
-    int idade;
+    diaP = diaNa;
+    mesP = mesNa;
+    anoP = anoNa;
+    idade = -1;
+}
 
-    Pessoa (int diaNa, int mesNa, int anoNa)
-    {
-        diaP = diaNa;
-        mesP = mesNa;
-        anoP = anoNa;
-        idade = -1;
-    }
-
-    void calculaIdade (int diaAt, int mesAt, int anoAt)
-    {
-        idade = anoAt - anoP;
-        if (mesAt < mesP)
-            idade--;
-        else if (mesAt == mesP && diaAt < diaP)
-            idade--;
-    }
-
-}Pessoa;
-
-int main ()
+void Pessoa::calculaIdade (int diaAt, int mesAt, int anoAt)
 {
-    Pessoa Einstein (14, 3, 1879);
-    Pessoa Newton (4, 1, 1643);
+    idade = anoAt - anoP;
+    if (mesAt < mesP)
+        idade--;
+    else if (mesAt == mesP && diaAt < diaP)
+        idade--;
+}
 
-    Einstein.calculaIdade(13, 7, 2024);
-    Newton.calculaIdade(13, 7, 2024);
+int Pessoa::getIdade ()
+{
+    return idade;
+}
 
-    printf ("A idade de Einstein seria: %d anos\n", Einstein.idade);
-    printf ("A idade de Newton seria: %d anos\n", Newton.idade);
-    return 0;
+void Pessoa::printIdade ()
+{
+    printf ("A idade eh: %d\n", idade);
 }

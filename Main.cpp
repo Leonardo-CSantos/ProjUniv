@@ -8,8 +8,8 @@ int main ()
     Einstein.calculaIdade(13, 7, 2024);
     Newton.calculaIdade(13, 7, 2024);
 
-    printf ("A idade de Einstein seria: %d anos\n", Einstein.getIdade());
-    printf ("A idade de Newton seria: %d anos\n", Newton.getIdade());
+    Einstein.printIdade();
+    Newton.printIdade();
     
     return 0;
 }
